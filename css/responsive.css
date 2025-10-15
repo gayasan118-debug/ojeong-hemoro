@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+@media all and (max-width:1024px){
+    /* layout */
+    .wrap {min-width: unset;}
+    .inner {max-width: 100%; padding: 0 20px;}
+    #hd, #wrapper, #ft {min-width: unset;}
+    #hd_wrapper, #tnb .inner, #gnb .gnb_wrap, #container_wr, #ft_wr {width: 100%;}
+
+
+    /* header */
+    header {height: 80px; padding: 0 !important;}
+    header .header-inner {height: 80px; padding: 0 20px; max-width: 100%;}
+    header .gnb {display: block; position: fixed; top: 0; right: -300px; width: 300px; max-width: 85%; height: 100%; background: #fff; padding-top: 80px; transition: right 0.3s; z-index: 99; box-shadow: -2px 0 5px rgba(0,0,0,0.1);}
+    header .gnb.active {right: 0;}
+    header .gnb > li {width: 100%;}
+    header .gnb > li > a {padding: 15px 20px; justify-content: flex-start;}
+    header .gnb .depth02 {display: none; position: static; padding: 0 20px; background: #f8f8f8;}
+    header .gnb > li.active .depth02 {display: block;}
+    header .gnb .depth02 > li > a { font-size: 13px; }
+    header .gnb .depth02 .depth02 > li > a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        justify-content: flex-start; /* Align to start */
+        padding-left: 30px; /* Indent sub-sub-menu items */
+        font-size: 12px; /* Slightly smaller font for sub-sub-menus */
+        height: auto; /* Allow height to adjust */
+        line-height: 1.2em; /* Adjust line height for wrapped text */
+        min-height: 40px; /* Ensure minimum height */
+    }
+    header .h-tell-box {font-size: 18px; display: flex;}
+    .hamburger {
+        display: flex; /* Change to flex to be part of the flex container */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30px; /* Adjust width as needed */
+        height: 30px; /* Adjust height as needed */
+        z-index: 100;
+        /* Remove absolute positioning */
+        position: static;
+        right: unset;
+        top: unset;
+        transform: unset;
+        margin-left: 10px; /* Keep some margin if needed, or rely on parent gap */
+    }
+    .hamburger span {display: block; width: 25px; height: 3px; background: #333; margin: 3px 0;}
+
+    /* main */
+    #main .section {height: auto !important; min-height: 100vh; padding: 80px 0;}
+    .fp-tableCell {display: block !important; height: auto !important; vertical-align: baseline !important;}
+
+    /* con01 */
+    #main .sec1, #main .sec1 .fp-tableCell { height: 100vh !important; }
+    .mv { height: 100%; }
+    .mv_slide .item .bg {width: 100%; height: 100%; left: 0; top: 0; margin: 0; object-fit: cover;}
+    .mv_slide .item .bg img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .mv_slide .item .txt_wrap {padding: 20px; background: none; top: 150px; right: unset; left: 20px;}
+    .mv_slide .item .txt_wrap.type02 {bottom: 50px; left: 20px;}
+    .mv_slide .item .txt_wrap .txt02 {font-size: 40px;}
+
+    /* con02 */
+    #main .con02 .inner {padding: 80px 20px;}
+    #main .con02 .con02_swiper {position: relative; width: 100%; left: 0; bottom: 0; margin-top: 40px; height: auto; aspect-ratio: 1/1;}
+    .con02_swiper_thumb_wrap {position: relative; width: 100%; right: 0; bottom: 0; margin-top: 20px;}
+    .slide_rolling_txt {font-size: 60px; top: 20%;}
+    #main .con02 .slide_txt_box {margin-top: 80px;}
+    .slide_page_nation_box {bottom: 20px;}
+
+    /* con03 */
+    #loc {flex-direction: column; height: auto; margin-top: 0;}
+    .loc-l {width: 100%; height: 50vh;}
+    .loc-r {min-width: unset; width: 100%; padding: 80px 20px;}
+    .loc-r-wrap {padding-left: 0;}
+    .loc-more-btn {display: none;}
+    #loc .loc-r {transform: translateY(0);}
+    #loc .loc-l {transform: translateY(0);}
+
+    /* con04 */
+    #main .con04 {
+        background: url(../images/main_con04_bg04.jpg) no-repeat center center / cover;
+        display: flex;
+        align-items: center;
+    }
+    #main .con04 .bg_box {
+        position: static;
+        height: auto;
+    }
+    #main .con04 .bg_box .bg {
+        background: none;
+        position: static;
+        height: auto;
+        display: block;
+    }
+    #main .con04 .inner {flex-direction: column; padding: 80px 20px; margin-bottom: 0; width: 100%;}
+    #main .con04 .right_box {width: 100%; margin-top: 40px;}
+    #main .con04 .t_slide_box {flex-direction: column;}
+    #main .con04 .t_slide_box > div {width: 100%;}
+
+    /* con05 */
+    #main .con05 .flex_box {flex-direction: column; height: auto;}
+    #main .con05 .left_box {width: 100%; height: 50vh; padding: 80px 20px;}
+    #main .con05 .right_box {padding: 80px 20px; min-height: 50vh; background-size: cover; background-position: center;}
+
+    /* footer */
+    footer {padding: 40px 20px;}
+    .f_inner {flex-direction: column; max-width: 100%;}
+    .f_inner .left_box {flex-direction: column; gap: 20px;}
+}
+
+@media all and (max-width:768px){
+    /* header */
+    header {height: 60px;}
+    header .header-inner {height: 60px;}
+    header .logo img {max-height: 30px; width: auto;}
+    header .h-tell-box {display: flex; font-size: 16px;} /* Reduce font size for smaller mobile screens */
+    
+    /* hamburger menu */
+    .hamburger {
+        margin-left: 10px; /* Keep some margin if needed, or rely on parent gap */
+    }
+    .hamburger span {display: block; width: 25px; height: 3px; background: #333; margin: 3px 0;}
+
+    header .gnb {padding-top: 60px;} /* Keep the padding-top, but the rest is already defined in the 1024px block */
+    header .gnb.active {right: 0;}
+    header .gnb > li {width: 100%;}
+    header .gnb > li > a {padding: 15px 20px; justify-content: flex-start;}
+    header .gnb .depth02 {display: none; position: static; padding: 0 20px; background: #f8f8f8;}
+    header .gnb > li.active .depth02 {display: block;}
+    header .gnb .depth02 > li > a { font-size: 13px; }
+    header .gnb .depth02 .depth02 > li > a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        justify-content: flex-start; /* Align to start */
+        padding-left: 30px; /* Indent sub-sub-menu items */
+        font-size: 12px; /* Slightly smaller font for sub-sub-menus */
+        height: auto; /* Allow height to adjust */
+        line-height: 1.2em; /* Adjust line height for wrapped text */
+        min-height: 40px; /* Ensure minimum height */
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    /* main */
+    #main .section {padding: 60px 0;}
+    .scroll_down_box {display: none;}
+
+    /* con01 */
+    .mv_slide .item .txt_wrap {top: 100px;}
+    .mv_slide .item .txt_wrap .txt01 {font-size: 16px;}
+    .mv_slide .item .txt_wrap .txt02 {font-size: 28px; padding: 15px 0;}
+    .mv_slide .item .txt_wrap .txt03 {font-size: 13px;}
+
+    /* con02 */
+    #main .con02 .inner {padding: 60px 20px;}
+    .con_txt_box .sub_tit {font-size: 18px;}
+    .con_txt_box .tit {font-size: 32px;}
+    #main .con02 .txt_img {width: 30px; right: -15px; bottom: 5px;}
+    #main .con02 .slide_txt_box {margin-top: 60px;}
+    .slide_txt_box .slide_txt .tit {font-size: 26px;}
+    .slide_txt_box .slide_sub_txt {font-size: 16px; margin-top: 30px;}
+    .slide_txt_box .slide_sub_txt span {font-size: 14px;}
+
+    /* con03 */
+    .loc-r {padding: 60px 20px;}
+    .main-fz-20 {font-size: 16px; margin: 40px 0 20px;}
+    .loc-title .tit03 {font-size: 24px;}
+    .loc-info-slide {margin-top: 80px;}
+    .loc-info-tit1 {font-size: 18px;}
+    .loc-info-sub2 {font-size: 28px; margin-bottom: 20px;}
+    .loc-info-sub3 {font-size: 14px;}
+    .loc-info-sub3 .small {font-size: 13px;}
+    .loc-r .slide_page_nation_box {bottom: 20px; left: 20px;}
+
+    /* con04 */
+    #main .con04 .inner {padding: 60px 20px;}
+    #main .con04 .left_box .sub_tit {font-size: 18px;}
+    #main .con04 .left_box .tit {font-size: 32px;}
+    .brand_btn {margin-top: 40px; width: 70px; height: 70px; left: 0;}
+    .brand_btn::after {width: 100px; height: 100px;}
+    #main .con04 .b_txt_box .tit {font-size: 22px;}
+    #main .con04 .b_txt_box .sub_tit {font-size: 16px; margin-top: 20px; margin-bottom: 10px;}
+    #main .con04 .b_txt_box .alt {font-size: 13px;}
+
+    /* con05 */
+    #main .con05 .left_box {padding: 60px 20px;}
+    #main .con05 .right_box {padding: 60px 20px;}
+    #main .con05 .left_box .txt_box .tit {font-size: 28px;}
+    #main .con05 .right_box .img {margin-bottom: 30px;}
+    #main .con05 .right_box .txt_box {height: auto; padding: 15px; flex-direction: column; gap: 10px;}
+    #main .con05 .right_box .txt_box .left_txt {font-size: 14px;}
+    #main .con05 .right_box .btm_txt_box .t_txt {font-size: 24px;}
+    #main .con05 .right_box .btm_txt_box .b_txt {font-size: 18px;}
+
+    /* footer */
+    .f_alt_box .f_alt p {font-size: 10px;}
+    .f_alt_box .f_copy {font-size: 11px; margin-top: 20px;}
+    .f_right .f_r_t_box {flex-direction: column; gap: 15px;}
+    .f_right .box {font-size: 12px;}
+    .f_right .box .alt {font-size: 14px;}
+    .f_r_alt {margin-top: 20px;}
+
+    /* Subpage content */
+    .content.sub { padding: 40px 0; }
+    .sub_top { background-size: cover; }
+    .sub_top .sub_tit { padding: 120px 0 80px; }
+    .sub_top .sub_tit h2 { font-size: 32px; }
+    .sub_top .sub_tit p { font-size: 16px; }
+    .sub_menu .inner { display: block; }
+    .sub_menu .home { display: none; }
+    .sub_menu .depth { width: 100%; padding-right: 0; }
+    .sub_menu .depth ul { 
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sub_menu .depth ul li { 
+        display: inline-block;
+        width: auto; 
+    }
+    .sub_menu .depth ul li a { font-size: 14px; padding: 0 10px; line-height: 50px; height: 50px; }
+    .sub_menu .depth ul li:not(:last-of-type)::after { display: none; }
+
+    .sub-tit01 { font-size: 24px; margin-bottom: 30px; }
+    .content .img img { width: 100%; height: auto; }
+
+    /* Responsive table */
+    .sub_tbl { margin-top: 30px; }
+    .sub_tbl table, .sub_tbl tbody, .sub_tbl tr { display: block; width: 100%; }
+    .sub_tbl tr { margin-bottom: 10px; }
+    .sub_tbl th, .sub_tbl td { display: block; width: 100%; text-align: left !important; padding: 10px; }
+    .sub_tbl th { background-color: #f2f2f2; font-weight: bold; }
+    .sub_tbl td { border-bottom: 1px solid #ddd; }
+    .sub_tbl table th::after { display: none; }
+    .precaution { padding: 20px; padding-left: 80px; }
+    .precaution:before { left: 20px; }
+}
