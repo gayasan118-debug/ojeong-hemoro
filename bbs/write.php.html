@@ -162,7 +162,7 @@ var g5_cookie_domain = "";
 <div class="content sub">
 	<div class="inner">
 		<div class="sub-tit01">관심고객등록</div>
-        <form name="fwrite" id="fwrite" action="https://getform.io/f/bpjzrqvb" method="post" enctype="multipart/form-data" autocomplete="off" style="width:100%">
+                <form name="fwrite" id="fwrite" autocomplete="off" style="width:100%">
 			<input type="hidden" name="uid" value="2025083114440208">
 			<input type="hidden" name="w" value="">
 			<input type="hidden" name="bo_table" value="customer">
@@ -423,5 +423,72 @@ var g5_cookie_domain = "";
     });
 </script>
 
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    // Initialize EmailJS with your Public Key
+    (function(){
+        emailjs.init({
+            publicKey: "ClFUoaELQQNLN8FPG",
+        });
+    })();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('fwrite');
+    // The submit button is the first button in the "btn_area"
+    const submitButton = form.querySelector('.btn_area .black button');
+
+    // Explicitly set the button type to 'submit'
+    if (submitButton) {
+        submitButton.type = 'submit';
+    }
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // --- Validation ---
+        // 1. Check for privacy agreement
+        const agreeRadios = document.querySelectorAll('input[name="agree1"]');
+        // The first radio is '동의' (Agree)
+        if (!agreeRadios[0] || !agreeRadios[0].checked) {
+            alert('개인정보의 수집 및 이용에 관한 동의에 동의하셔야 합니다.');
+            return;
+        }
+
+        // 2. Check for required fields
+        const wrName = document.getElementById('wr_name').value.trim();
+        const hp2 = document.getElementById('hp2').value.trim();
+        const hp3 = document.getElementById('hp3').value.trim();
+
+        if (!wrName || !hp2 || !hp3) {
+            alert('이름과 휴대전화번호를 모두 입력해주세요.');
+            return;
+        }
+        // --- End Validation ---
+
+        // Update button state
+        submitButton.textContent = '전송 중...';
+        submitButton.disabled = true;
+
+        const serviceID = 'service_yorcs8l';
+        const templateID = 'template_le70gei';
+
+        // Send the form data using EmailJS
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                alert('관심 고객 등록이 완료되었습니다.');
+                form.reset(); // Reset the form fields
+            }, (err) => {
+                alert('오류가 발생했습니다. 다시 시도해주세요.\n' + JSON.stringify(err));
+            })
+            .finally(() => {
+                // Restore button state
+                submitButton.textContent = '등록하기';
+                submitButton.disabled = false;
+            });
+    });
+});
+</script>
 </body>
 </html>
